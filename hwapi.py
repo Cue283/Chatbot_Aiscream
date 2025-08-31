@@ -21,12 +21,12 @@ def get_nasa_apod():
         date = data.get("date", "No date")
         explanation = data.get("explanation", "No explanation")
         url = data.get("url", "No URL")
-        return f"🌌 NASA Astronomy Picture of the Day 🌌\r\nTitle: {title}\r\nDate: {date}\r\nURL: {url}\r\nExplanation: {explanation}\r\n"
+        return f" NASA Astronomy Picture of the Day \r\nTitle: {title}\r\nDate: {date}\r\nURL: {url}\r\nExplanation: {explanation}\r\n"
     except Exception as e:
         return f"Failed to get NASA APOD: {e}\r\n"
 
 def get_space_fact():
-    return f"🌠 Space Fact 🌠\r\n{random.choice(SPACE_FACTS)}\r\n"
+    return f"Space Fact\r\n{random.choice(SPACE_FACTS)}\r\n"
 
 # เซิร์ฟเวอร์
 serversocket = socket(AF_INET, SOCK_STREAM)
@@ -38,7 +38,7 @@ while True:
     print("Connected from %s" % str(addr))
 
     main_msg = (
-        "🚀 Welcome to Space Chatbot 🚀\r\n"
+        "Welcome to Space Chatbot\r\n"
         "1. Space Info\r\n"
         "2. About this chatbot\r\n"
         "3. End Chat\r\n"
@@ -50,10 +50,10 @@ while True:
         choice = data.decode('ascii').strip()
 
         if choice == "1":
-            # loop ชั้นสองสำหรับ Space Info
+            
             while True:
                 sub_msg = (
-                    "🌌 Space Info 🌌\r\n"
+                    "Space Info \r\n"
                     "1. Show NASA Astronomy Picture of the Day\r\n"
                     "2. Show a random space fact\r\n"
                     "3. Back to main menu\r\n"
